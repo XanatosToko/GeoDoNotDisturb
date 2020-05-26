@@ -86,7 +86,9 @@ public class MainActivity extends Activity
 //            }
 //        });
 
+        //Reload any saved data, handles defaults if they haven't been set
         loadData();
+        saveData();
 
         Switch onOff = findViewById(R.id.switch1);
         onOff.setChecked(geoActive);
@@ -117,7 +119,6 @@ public class MainActivity extends Activity
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map_fragment_id);
         mapFragment.getMapAsync(this);
-        geoActive = false;
     }
 
     private void activateGeoFencingStuff(){
